@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    * {
+      box-sizing: border-box
+    }
+
+    body {
+      font-family: Verdana, sans-serif;
+      margin: 0
+    }
+
+    .mySlides {
+      display: none
+    }
+
+    .mySlides img {
+      vertical-align: middle;
+    }
+
+    /* Slideshow container */
+    .slideshow-container {
+
+      max-width: 1000px;
+      height: 500px;
+      position: relative;
+      margin: auto;
+      border-radius: 20px;
+    }
+
+    /* Next & previous buttons */
+    .prev,
+    .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      margin-top: -22px;
+      color: black;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+      background-color: white;
+    }
+
+    /* Position the "next button" to the right */
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover,
+    .next:hover {
+      background-color: black;
+      color: white;
+    }
+
+    /* The dots/bullets/indicators */
+    .dot {
+      cursor: pointer;
+      height: 15px;
+      width: 15px;
+      margin: 0 2px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+
+    .active,
+    .dot:hover {
+      background-color: #717171;
+    }
+
+    /* Fading animation */
+    .fade {
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+
+    @keyframes fade {
+      from {
+        opacity: .4
+      }
+
+      to {
+        opacity: 1
+      }
+    }
+
+    /* On smaller screens, decrease text size */
+    @media only screen and (max-width: 300px) {
+
+      .prev,
+      .next,
+      .text {
+        font-size: 11px
+      }
+    }
+  </style>
+</head>
+
+<body style="margin: 0px;">
+  <div class="topnav">
+    <a class="active" href="index.html">ProgressiveX</a>
+    <input type="text" placeholder="Search... but it does nothing">
+    <a href="feedback.html">Feedback</a>
+  </div>
+
+  <div class="slideshow-container">
+
+    <div class="mySlides fade">
+      <img src="image (2).png">
+    </div>
+
+    <div class="mySlides fade">
+      <img src="image.png">
+    </div>
+
+    <div class="mySlides fade">
+      <img src="image (1).png">
+    </div>
+
+    <div class="mySlides fade">
+      <img src="image (3).png">
+    </div>
+
+    <div class="mySlides fade">
+      <img src="image (4).png">
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1)">❮</a>
+    <a class="next" onclick="plusSlides(1)">❯</a>
+
+  </div>
+  <br>
+
+  <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+    <span class="dot" onclick="currentSlide(4)"></span>
+    <span class="dot" onclick="currentSlide(5)"></span>
+  </div>
+
+  <script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      if (n > slides.length) { slideIndex = 1 }
+      if (n < 1) { slideIndex = slides.length }
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].className += " active";
+    }
+  </script>
+
+  <header>
+    <h1>Recommended:</h1>
+  </header>
+
+  <div class="products">
+    <div>
+      <button onclick="document.getElementById('id01').style.display='block'"><img
+          src="Picsart_23-01-26_15-21-16-119.jpg" alt="teddy"></button>
+      <div id="id01" class="modal">
+        <span onclick="document.getElementById('id01').style.display='none'" class="close"
+          title="Close Modal">&times;</span>
+        <form class="modal-content animate" action="/action_page.php">
+          <div class="contentcontainer">
+            <div style="width: auto ;height: 100px;background-color: antiquewhite;" class="comicbox">
+              <p style="font-size: 85%; font-style: oblique;">
+                <b></b>
+                Teddy grew up in New York City with a loving family and a love for nature as he would hike and adventure
+                the outdoors. He attended Harvard and Columbia Law School. As a politician, Teddy was a progressive
+                fighting against the evil of monopolies, and
+                the majority of the republican party, as the majority of the republican party was for
+                corporations. To destroy his career
+                William Mckinley chose him to become his vice president. Ironically Mckinley was shot and Teddy became
+                the president and began his highly progressive reforms.
+                </b>
+              </p>
+            </div>
+            <div style="display: flex;">
+              <div class="comicbox" style="width: 40%;">
+                <p style="font-size: 100%;">
+                  <b>
+                    Teddy established the New Lands act, made unused government land national parks, and the National
+                    Reclamation act, established fees for corporations to use national parks. In turn, gave us national
+                    parks protected by federal law that we and the animals occupying it can enjoy.
+                  </b>
+                </p>
+              </div>
+              <div class="comicbox" style="width: 60%;">
+                <img src="teddy_environment.jpg" alt="CIE">
+              </div>
+            </div>
+            <div style="display: flex;">
+              <div class="comicbox" style="width: 60%;display: flex;">
+                <img style="width: 100%;" src="1.jpg" alt="no">
+              </div>
+              <div class="comicbox" style="width: 40%; font-size: 101.5%;">
+                <p>
+                  <b>
+                    Teddy also established the Meat Inspection Act, inspections anytime, and the Pure Food & Drug
+                    Act, by law drugs and foods, needs the ingredients listed, which changed how meat corporations
+                    function
+                    letting us now eat pure meat, and if we have questions, check the label.
+                  </b>
+                </p>
+              </div>
+            </div>
+            <div style="display: flex;">
+              <div class="comicbox" style="width: 40%; height: 430px;">
+                <img src="2.jpg" alt="mm">
+                <div class="comicbox;"
+                  style="width: auto; height: auto; position: absolute; background-color: white; border: black solid 2px; bottom: 23%;">
+                  <p>
+                    When Teddy hears "Forest fire"
+                  </p>
+                </div>
+              </div>
+              <div style="flex-direction: column; display: flex">
+                <div class="comicbox" style="width: 420px; height: 50%; font-size: 110%;">
+                  <p>
+                    <b>
+                    Teddy is a notorious environmentalist but something that can destroy his
+                    federal parks and forests is fire.
+                    Teddy doesn't just give coal miners a 40% raise and fewer hours but also gives the company the
+                    ability to raise their product by 10% supporting that Teddy deals with both sides.
+                    Teddy wants to control the corporations instead of
+                    destroying them, inspection act, because he needs them to keep the peace.
+                  </b>
+                  </p>
+                </div>
+                <div class="comicbox" style="width: 420px; height: 50%;">
+                  <p style="font-size: 120%; margin: 20px;">
+                    <b>
+                    Martian Manhunter's weakness is fire.
+                    Martian Manhunter has a
+                    shapeshifter ability, he can change into anyone and that grants him the mindset of viewing
+                    both
+                    sides.
+                    Martian Manhunter
+                    even has mind control to control his foes.
+                  </b>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div>
+      <button onclick="document.getElementById('id02').style.display='block'"><img
+          src="Picsart_23-01-26_15-50-25-571.jpg" alt="taft"></button>
+      <div id="id02" class="modal">
+        <span onclick="document.getElementById('id02').style.display='none'" class="close"
+          title="Close Modal">&times;</span>
+        <form class="modal-content animate" action="/action_page.php">
+          <div class="contentcontainer">
+            <div style="width: auto ;height: 100px;background-color: antiquewhite;" class="comicbox">
+              <p style="font-style: oblique;">
+                <b>
+                Taft was incredibly smart, smarter than Teddy, and a progressive. He always wanted to be the supreme
+                court judge but
+                was appointed to Secretary of War in 1907. Soon after, Roosevelt realized that Taft would be
+                the best suit for president. He was swiftly nominated by the Republican Convention and got the
+                presidency.
+              </b>
+              </p>
+            </div>
+            <div style="display: flex;">
+              <div class="comicbox" style="width: 40%;">
+                <img src="taft.jfif" alt="taft">
+              </div>
+              <div class="comicbox" style="width: 60%;">
+                <p style="font-size: 110%;">
+                  <b>
+                  President Taft established the 16th amendment which allows the federal government to tax corporations
+                  based on how much money they make. This changed establishments because it's even apparent nowadays
+                  with many arguments on how much the
+                  tax should be leading to companies leaving certain states.
+                </b>
+                </p>
+              </div>
+            </div>
+            <div style="display: flex;">
+              <div class="comicbox" style="width: 60%;">
+                <p style="font-size: 120%;">
+                  <b>
+                  The 17th amendment was also added, it lets people vote for their senators instead of state
+                  legislatures. This political change still impacts us today because we still vote for our senators and
+                  it gives common people political power, today it's argued if it's enough or too little.
+                </b>
+                </p>
+              </div>
+              <div class="comicbox" style="width: 40%;">
+                <img src="vote for senators.jfif" alt="taft">
+                <p class="comicbox;"
+                  style="width: auto; height: auto; position: absolute; background-color: white; border: black solid 2px; left: 53%; bottom: 51%;">
+                  Taft to the people</p>
+              </div>
+            </div>
+            <div style="display: flex;">
+              <div class="comicbox" style="width: 40%; height: 430px;">
+                <p style="font-size: 103%;">
+                  <b>
+                  Prof. Hulk is the mind of Bruce Banner and the body of Hulk, with them fused Prof. is against violence
+                  and avoids conflict like how Pres. Taft does with conflict in the House of Representatives. Although
+                  Prof. Hulk is still strong and can defeat many when his mind is put to it, Taft is capable of doing
+                  great feats like the attack on monopolies, and the 16th amendment. Prof. Hulk also needs oversized
+                  daily
+                  utilities just like Pres. Taft. Lastly, both are extremely intelligent, Porf. Hulk with multiple PhDs
+                  and Taft attending Harvard and teaching at Yale.
+                </b>
+                </p>
+              </div>
+              <div style="flex-direction: column; display: flex">
+                <div class="comicbox" style="width: 420px; height: 44.5%;">
+                  <img src="taft3.jpg" alt="taft">
+                </div>
+                <div class="comicbox" style="width: 420px; height: 45%;">
+                  <img style="height: 100%;" src="better taf.jpg" alt="taft">
+                  <p class="comicbox;"
+                    style="text-align: center; width: 75px; height: auto; position: absolute; background-color: white; border: black solid 2px; left: 56%; bottom: -25%;">
+                    Pres. Taft
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div>
+      <button onclick="document.getElementById('id03').style.display='block'"><img
+          src="Picsart_23-01-26_15-03-41-396.jpg" alt="willson"></button>
+      <div id="id03" class="modal">
+        <span onclick="document.getElementById('id03').style.display='none'" class="close"
+          title="Close Modal">&times;</span>
+        <form class="modal-content animate" action="/action_page.php">
+          <div class="contentcontainer">
+            <div style="width: auto ;height: 100px;background-color: antiquewhite;" class="comicbox">
+              <p style="font-style: oblique;">
+                <b>
+                Wilson is regarded as the most progressive of the three. His former years as a professor allowed him
+                to
+                better connect with progressive ideologies. He became president of Princeton and Rapidly turned the
+                college around from party to prestigious. He was nominated at the Democratic Convention where he won
+                only
+                42% of the popular vote but overwhelmingly won the electoral vote.
+              </b>
+              </p>
+            </div>
+            <div style="display: flex;">
+              <div class="comicbox" style="width: 40%;">
+                <img src="wilson.jpg" alt="wilson">
+              </div>
+              <div class="comicbox" style="width: 60%;">
+                <p style="font-size: 110%;">
+                  <b>
+                  Wilson introduced the 19th amendment in his term after a long time of women's sufferage, after this
+                  got
+                  passed there were groups of women advocating for the ban of alcohol due to the consequences when their
+                  husbands drinks. Nowadays this change in political power for women led to many groups of "Mons against
+                  ____" and the other 50% of the US population voting.
+                </b>
+                </p>
+              </div>
+            </div>
+            <div style="display: flex;">
+              <div class="comicbox" style="width: 60%;">
+                <p style="font-size: 105%">
+                  <b>
+                  His most extreme, yet effective ideas included the Clayton Anti-Trust Act which was used to combat
+                  tycoon use of monopolies. It outlawed all the strategies used by tycoons trying to establish a
+                  monopoly. This act allowed for competition in companies and with competition, the price and quality of
+                  an item are regulated, nowadays many companies are competing for customers.
+                </b>
+                </p>
+              </div>
+              <div class="comicbox" style="width: 40%;">
+                <img src="wilson1.jpg" alt="wilson">
+                <div class="comicbox;"
+                  style="width: auto; height: auto; position: absolute; background-color: white; border: black solid 2px; left: 53%; bottom: 51%;">
+                  <p>
+                    monopolies
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div style="display: flex;">
+              <div class="comicbox" style="width: 40%; height: 430px;">
+                <p style="font-size: 120%;">
+                  <b>
+                  Pres. Wilson fought for women's rights, Batman displays women's rights by fighting for everyone
+                  equally,
+                  equal rights equal fights. Wilson also fought for child labor laws and batman generously donates to
+                  orphanages and adopts. Although Wilson was extremely racist, to the
+                  point of watching "The Birth of a Nation" thankfully Batman isn't racist but his flaw is that he
+                  trusts
+                  no one which can lead him to get a bad reputation.
+                </b>
+                </p>
+              </div>
+              <div style="flex-direction: column; display: flex">
+                <div class="comicbox" style="width: 420px; height: 45%;">
+                  <img src="racist1.jpg" alt="wilson">
+                  <div
+                    style="width: auto; height: auto; position: absolute; background-color: antiquewhite; border: black solid 2px; left: 43%; bottom: 22%;">
+                    <p>
+                      Meanwhile in the White House...
+                    </p>
+                  </div>
+                </div>
+                <div class="comicbox" style="width: 420px; height: 43%;">
+                  <img style="height: 100%;" src="wilson3.PNG" alt="wilson">
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="title">
+    <div>
+      <h1>
+        Pres. Teddy
+      </h1>
+    </div>
+    <div>
+      <h1>
+        Pres. Taft
+      </h1>
+    </div>
+    <div>
+      <h1>
+        Pres. Wilson
+      </h1>
+    </div>
+  </div>
+</body>
+
+</html>

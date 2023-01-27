@@ -1,0 +1,203 @@
+.topnav {
+  overflow: hidden;
+  display: flex;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: white;
+  justify-content: space-between;
+}
+
+.topnav a {
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  font-size: 30px;
+  padding: 10px;
+  margin: 0px 125px;
+  width: 250px;
+  background-color: white;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+  border-radius: 5px;
+}
+
+.topnav a.active {
+  color: black;
+  border-radius: 10px;
+}
+
+.topnav input[type=text] {
+  border: solid;
+  font-size: 17px;
+  border-radius: 10px;
+  width: 1200px;
+  height: 35px;
+  margin-top: 12px;
+  justify-content: center;
+}
+
+.slidebar {
+  border: 4px;
+  border-style: solid;
+  border-radius: 20px;
+  width: auto;
+  height: 400px;
+  margin: 100px 200px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+
+}
+
+.slidebar button {
+  border-radius: 15px;
+  border-style: hidden;
+  color: rgb(201, 201, 201);
+  opacity: .5;
+  height: 400px;
+}
+
+button:hover {
+  color: black;
+  opacity: 1;
+}
+
+header {
+  margin-left: 198px;
+}
+
+.products {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.products button {
+  cursor: pointer;
+  width: auto;
+  height: auto;
+}
+
+.products img {
+  width: 400px;
+  height: 400px;
+}
+
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5px auto;
+  /* 15% from the top and centered */
+  border: 1px solid #888;
+  width: fit-content;
+  /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  /* Position it in the top right corner outside of the modal */
+  position: fixed;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+/* Close button on hover */
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {
+    -webkit-transform: scale(0)
+  }
+
+  to {
+    -webkit-transform: scale(1)
+  }
+}
+
+@keyframes animatezoom {
+  from {
+    transform: scale(0)
+  }
+
+  to {
+    transform: scale(1)
+  }
+}
+
+.slideshow-container img {
+  width: 100%;
+  height: 495px;
+  justify-content: center;
+  border-radius: 17px;
+}
+
+.title {
+  flex-direction: row;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  margin-bottom: 30px;
+}
+
+.contentcontainer {
+  background-color: white;
+  width: 700px;
+  height: 1000px;
+}
+
+.comicbox {
+  border: #000;
+  border-style: solid;
+  margin: 10px;
+  height: 200px;
+  background-color: antiquewhite;
+}
+
+.comicbox p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  margin: 5px;
+}
+
+.comicbox img {
+  width: 100%;
+  height: 100%;
+}
